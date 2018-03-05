@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPane" minHeight="800.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.qti.program.QTIQuestionsController">
+   <children>
+      <TableView fx:id="table" layoutX="-2.0" layoutY="26.0" prefHeight="692.0" prefWidth="1200.0" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="26.0">
+        <columns>
+          <TableColumn fx:id="questionTitle" prefWidth="137.0" text="Question Title" />
+          <TableColumn fx:id="questionContent" minWidth="838.0" prefWidth="838.0" text="Question Content" />
+            <TableColumn fx:id="questionSkills" prefWidth="209.0" text="Skills" />
+        </columns>
+      </TableView>
+      <Button fx:id="updateSkills" layoutX="289.0" layoutY="735.0" mnemonicParsing="false" onAction="#updateSkillsClick" prefHeight="37.0" prefWidth="134.0" text="Update Skills" AnchorPane.bottomAnchor="28.0" />
+      <Label fx:id="skillsNoteLabel" alignment="TOP_CENTER" layoutX="459.0" layoutY="723.0" prefHeight="66.0" prefWidth="383.0" text="Please note: skills are updated via CSV upload, and the CSV must be formatted with the old skills in the first column with a header &quot;Old Skills,&quot; while new skills must be in the second column with the label &quot;New Skills.&quot;" wrapText="true" AnchorPane.bottomAnchor="11.0" />
+      <MenuBar fx:id="menuBar" layoutY="-3.0" prefHeight="29.0" prefWidth="1200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-3.0">
+        <menus>
+          <Menu fx:id="fileMenu" mnemonicParsing="false" onAction="#fileMenuClick" text="File">
+            <items>
+                  <MenuItem fx:id="importMenuItem" mnemonicParsing="false" onAction="#importMenuItemSelect" text="Import" />
+                  <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" onAction="#saveMenuItemClick" text="Save" />
+              <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" onAction="#closeMenuItemClick" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
